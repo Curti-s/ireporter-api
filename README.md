@@ -38,3 +38,6 @@ resolved).
 1. The user can only change the geolocation (Lat Long Coordinates) of a red flag/ intervention record when the record’s status is yet to be marked as either under investigation, rejected, or resolved.
 2. The user can only edit or delete a red-flag/ intervention record when the record’s status is yet to be marked as either under investigation, rejected, or resolved.
 3. Only the user who created the red-flag or incident record can delete the record.
+
+**github link**
+[iReporter](https://curti-s.github.io/iReporter/)
