@@ -6,6 +6,12 @@ body{
     margin:0;
     background: linear-gradient(to right, #00467f, #a5cc82);
 }
+
+a {
+    text-decoration: none;
+}
+
+/* signup and signin styles*/
 .container {
     height: 100%;
     width: 100%;
@@ -86,4 +92,111 @@ button{
 button:hover{
     background:#03396c;
     color:#fff
+}
+
+/*welcome page*/
+
+.welcome-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    height: 100vh;
+    background: linear-gradient(#8E2DE2,#4A00E0);
+    min-width: 100%;
+}
+
+header#header {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 10px;
+    border: 0;
+    color: rgba(117,117,117 ,1);
+    box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+    font-size: 1.3em;
+}
+
+header#header .logo {
+    flex: 1;
+    padding-top: 1.5rem;
+}
+
+header#header .logo .brand {
+    margin-left: 2rem;
+    font-size: 2.5em;
+    color: #eee;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header#header .buttons  {
+    display: flex;
+    list-style: none;
+}
+
+header#header .buttons li {
+    margin-right: 1.3rem;
+}
+
+header#header .buttons li>a {
+    border: 0;
+    background: rgba(0,0,0,.0941176);
+    color: #fff;
+    border-radius: .15rem;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header#header .buttons li .signup-btn {
+    color: #36465d;
+    background: #fff;
+}
+
+#content .content-wrapper {
+    margin: 2rem auto;
+    padding-top: 5rem;
+    width: 500px;
+}
+
+#content .content-wrapper .content-logo {
+    text-align: center;
+}
+#content .content-wrapper .content-logo .fas {
+    color: #fff;
+    font-size: 7em;
+}
+
+#content .content-wrapper .main-content {
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.4;
+    margin-top: 5rem;
+}
+
+#content .content-wrapper .content-title {
+    font-size: 34px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+#content .content-wrapper .main-content p {
+    color: #fff;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #welcome-section {
+        grid-template-areas:
+        "header"
+        "content"
+        "footer";
+        grid-template-columns: 1fr;
+    }
 }
