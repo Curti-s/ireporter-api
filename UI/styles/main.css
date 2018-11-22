@@ -335,3 +335,61 @@ body {
     font-size: .7em;
 
 }
+
+/*redflag-wrapper*/
+
+#redflag-wrapper {
+    width: 960px;
+    background: #FFF;
+    padding: 1.25rem;
+    margin: 2rem auto;
+    min-height: 500px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    border: 1px solid transparent;
+    border-radius: .1rem;
+}
+
+#redflag-wrapper .title {
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#redflag-wrapper .field {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+#redflag-wrapper .field textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
+}
+
+#redflag-wrapper .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#redflag-wrapper .btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+#redflag-wrapper .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
