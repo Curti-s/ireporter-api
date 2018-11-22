@@ -6,6 +6,8 @@ body{
     margin:0;
     background: linear-gradient(to right, #00467f, #a5cc82);
 }
+
+/* signup and signin styles*/
 .container {
     height: 100%;
     width: 100%;
@@ -86,4 +88,29 @@ button{
 button:hover{
     background:#03396c;
     color:#fff
+}
+
+/*welcome page*/
+
+.welcome-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    height: 100vh;
+    grid-template-areas:
+    "header header header"
+    "content content content"
+    "footer footer footer"
+}
+
+#header {
+    grid-area: header
+}
+
+#content {
+    grid-area: content;
+}
+
+#footer {
+    grid-area: footer;
 }
