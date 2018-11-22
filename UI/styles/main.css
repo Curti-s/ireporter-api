@@ -5,6 +5,7 @@ body{
     padding: 0;
     margin:0;
     background: linear-gradient(to right, #00467f, #a5cc82);
+    height: 100%;
 }
 
 a {
@@ -95,13 +96,14 @@ button:hover{
 }
 
 /*welcome page*/
-
+body {
+    background: linear-gradient(#8E2DE2,#4A00E0);
+}
 .welcome-section {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
     height: 100vh;
-    background: linear-gradient(#8E2DE2,#4A00E0);
     min-width: 100%;
 }
 
@@ -199,4 +201,137 @@ header#header .buttons li .signup-btn {
         "footer";
         grid-template-columns: 1fr;
     }
+}
+
+/*homepage*/
+
+header#homepage-header {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 10px;
+    border: 0;
+    color: rgba(117,117,117 ,1);
+    box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+    font-size: 1.3em;
+}
+
+header#homepage-header .buttons {
+    display: flex;
+    list-style:none;
+}
+
+header#homepage-header .buttons li {
+    margin-right: 1.3rem;
+}
+
+header#homepage-header .buttons li>a {
+    border: 0;
+    background: rgba(0,0,0,.0941176);
+    color: #fff;
+    border-radius: .15rem;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header#homepage-header .logo {
+    flex: 1;
+    padding-top: 1.5rem;
+}
+
+header#homepage-header .logo .brand {
+    margin-left: 6rem;
+    font-size: 2.5em;
+    color: #eee;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(to left,#8E2DE2,#4A00E0);
+}
+
+#homepage-content .grid {
+    list-style-type: none;
+    width: 700px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-gap:2rem;
+    margin-left: 10rem;
+
+}
+
+#homepage-content .card {
+    background-color: #fff;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition:transform .1s ease-in;
+    display:flex;
+    flex-direction:column;
+    min-height:100%;
+    border: 1px solid transparent;
+    border-radius: .5rem;
+}
+#homepage-content .card:hover, #homepage-content .card:focus {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.16);
+    transform:scale(1.009);    
+}
+
+#homepage-content .card-image img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+#homepage-content .card-content {
+    padding:1rem;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+#homepage-content .card-title {
+    font-size: 3em;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#homepage-content .card-body   {
+    flex: 1;
+}
+
+#homepage-content .card-footer {
+    text-transform:uppercase;
+    font-size:.75rem;
+    color:#666;
+    font-weight:600;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    
+}
+
+#homepage-content .card-footer button {
+    margin-right: 1rem;
+}
+
+#homepage-footer {
+    /* position: fixed; */
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    /* background: linear-gradient(#C9D6FF, #E2E2E2); */
+    border: 1px solid transparent;
+    border-radius: .1em;
+}
+
+#homepage-footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .7em;
+
 }
