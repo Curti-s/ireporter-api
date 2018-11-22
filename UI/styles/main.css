@@ -264,6 +264,8 @@ body {
 
 }
 
+
+
 #homepage-content .card {
     background-color: #fff;
     text-decoration: none;
@@ -281,11 +283,13 @@ body {
     transform:scale(1.009);    
 }
 
+
 #homepage-content .card-image img {
     width: 100%;
     height: 340px;
     object-fit: cover;
 }
+
 
 #homepage-content .card-content {
     padding:1rem;
@@ -333,7 +337,7 @@ body {
 #homepage-footer p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: .7em;
-
+    
 }
 
 /*redflag-wrapper*/
@@ -384,7 +388,7 @@ body {
     border-radius: 8px;
     font-size: 20px;
     font-weight: bold;
-  }
+}
 
 #redflag-wrapper .upload-btn-wrapper input[type=file] {
     font-size: 100px;
@@ -392,4 +396,135 @@ body {
     left: 0;
     top: 0;
     opacity: 0;
+}
+
+/*profile*/
+#profile-sections {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+#profile-settings {
+    height: 50%;
+}
+#profile .record-wrapper {
+    border-left: 1px solid #e1e8ed;
+    border-right: 1px solid #e1e8ed;
+    border-top: 1px solid #e1e8ed;
+    width: 588px;
+    margin: auto;
+    border-radius: 5px;
+    background: #eee;
+}
+  
+  #profile .record-wrapper .title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      margin-left: 5rem;
+    }
+    
+  #profile .record-entry {
+    border-bottom: 1px solid #e1e8ed;
+    cursor: pointer;
+    min-height: 51px;
+    padding: 1.3rem 12px;
+}
+
+#profile .record-content {
+    display: block;
+    font-size: 14px;
+    margin-left: 58px;
+    font-size: 14px;
   }
+  
+  #profile .record-acc-group {
+      color: #8899a6;
+    padding: 0px;
+    text-decoration: none;
+    line-height: 20px;
+}
+
+#profile .record-acc-group>img {
+    float: left;
+    height: 48px;
+    width: 48px;
+    margin-left: -58px;
+    border-radius: 2rem;
+}
+
+#profile .record-username {
+    font-weight: bold;
+    font-size: 14px;
+    color: #b1bbc3;
+    padding: 0px;
+}
+
+#profile .record-timestamp {
+    font-size: 14px;
+    color: #b1bbc3;
+    padding: 0px;
+}
+
+#profile .record-preview-content {
+    font-size: 14px;
+    color: #292f33;
+    line-height: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+  #profile .record-optional-media {
+      margin-left: 58px;
+      margin-top: 10px;
+    }
+    
+    
+    #profile .record-optional-media>img {
+        border-radius: 5px;
+        max-width: 506px;
+        max-height: 506px;
+    }
+    
+    #profile .record-action-list {
+    display: block;
+    line-height: 18px;
+    margin-left: 58px;
+    margin-top: 10px;
+    color: #292f33;
+}
+
+#profile .record-action-list button {
+    float: none;
+    
+}
+#profile-settings .card {
+    width: 300px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition:transform .1s ease-in;
+    display:flex;
+    flex-direction:column;
+    min-height:100%;
+    border: 1px solid transparent;
+    border-radius: .5rem;
+}
+
+#profile-settings .card-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10rem;
+    padding: 2rem;
+}
+
+#profile-settings .card-content {
+    padding: 1.3rem;
+}
+
+#profile-settings .card-footer button {
+    margin-right: 1.3rem;
+    margin-bottom: 1rem;
+}
