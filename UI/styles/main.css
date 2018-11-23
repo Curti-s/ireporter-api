@@ -595,6 +595,11 @@ body {
     color: #062F4F;
 }
 
+#admin-main .subtitle {
+    color: #062f4f;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #admin-main .admin-flex-grid {
     display: flex;
     min-height: 180px;
