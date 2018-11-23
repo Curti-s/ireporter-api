@@ -432,6 +432,9 @@ body {
     padding: 1.3rem 12px;
 }
 
+
+
+
 #profile .record-content {
     display: block;
     font-size: 14px;
@@ -440,7 +443,7 @@ body {
   }
   
   #profile .record-acc-group {
-      color: #8899a6;
+    color: #8899a6;
     padding: 0px;
     text-decoration: none;
     line-height: 20px;
@@ -474,9 +477,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
   
-  #profile .record-optional-media {
-      margin-left: 58px;
-      margin-top: 10px;
+#profile .record-optional-media {
+    margin-left: 58px;
+    margin-top: 10px;
     }
     
     
@@ -487,12 +490,15 @@ body {
     }
     
     #profile .record-action-list {
-    display: block;
+        display: block;
     line-height: 18px;
     margin-left: 58px;
     margin-top: 10px;
     color: #292f33;
 }
+
+
+
 
 #profile .record-action-list button {
     float: none;
@@ -527,4 +533,196 @@ body {
 #profile-settings .card-footer button {
     margin-right: 1.3rem;
     margin-bottom: 1rem;
+}
+
+/*admin-dashboard*/
+#admin-display {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 80px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#dashboard {
+    width: 250px;
+    background: linear-gradient(#C9D6FF,#E2E2E2);
+    opacity: 0.7;
+}
+
+#dashboard .top {
+    position: relative;
+    height: 70px;
+    padding: 15px 0 0 15px;
+    font-size: 16px;
+    color: #fff;
+}
+
+#dashboard ul {
+    list-style-type: none;
+}
+
+#dashboard ul li {
+    padding: 1.1rem;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+#dashboard ul li:first-child {
+    padding: 15px;
+    color: rgba(255,255,255,.5);
+    text-transform: uppercase;
+    border-bottom: 1px solid #e1e8ed;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#admin-main {
+    flex: 1;
+    padding: 25px;
+    background: #f5f5f5;
+}
+
+#admin-main .title {
+    height: 70px;
+    margin: -25px -25px 25px -25px;
+    padding: 0 25px;
+    line-height: 66px;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
+    color: #062F4F;
+}
+
+#admin-main .admin-flex-grid {
+    display: flex;
+    min-height: 180px;
+}
+
+.admin-content {
+    flex: 1;
+    margin: 0 20px 20px 0;
+    border: 1px solid #ddd;
+}
+
+.admin-content .content-title {
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
+    background: #fafafa;
+    color: #062F4F;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#admin-main .record-entry {
+    border-bottom: 1px solid #e1e8ed;
+    cursor: pointer;
+    min-height: 51px;
+    padding: 1.3rem 12px;
+}
+
+#admin-main .record-content {
+    display: block;
+    font-size: 14px;
+    margin-left: 58px;
+    font-size: 14px;
+}
+
+
+#admin-main .record-acc-group {
+    color: #8899a6;
+    padding: 0px;
+    text-decoration: none;
+    line-height: 20px;
+}
+
+#admin-main .record-acc-group>img {
+    float: left;
+    height: 48px;
+    width: 48px;
+    margin-left: -58px;
+    border-radius: 2rem;
+}
+
+#admin-main .record-username {
+    font-weight: bold;
+    font-size: 14px;
+    color: #b1bbc3;
+    padding: 0px;
+}
+
+
+#admin-main .record-timestamp {
+    font-size: 14px;
+    color: #b1bbc3;
+    padding: 0px;
+}
+
+#admin-main .record-preview-content {
+    font-size: 14px;
+    color: #292f33;
+    line-height: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+#admin-main .record-optional-media {
+    margin-left: 58px;
+    margin-top: 10px;
+    }
+    
+    
+    #admin-main .record-optional-media>img {
+        border-radius: 5px;
+        max-width: 400px;
+        max-height: 506px;
+    }
+    
+    #admin-main .record-action-list {
+        display: block;
+    line-height: 18px;
+    margin-left: 58px;
+    margin-top: 10px;
+    color: #292f33;
+}
+
+
+
+
+#admin-main .record-action-list button {
+    float: none;
+    
+}
+
+
+
+#admin-main .field {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+#admin-main .field textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
+}
+#admin-main .field {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+#admin-main .field textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
 }
