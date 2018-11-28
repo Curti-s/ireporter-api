@@ -13,5 +13,5 @@ script:
   - pytest 
 
 # return coverage and let coveralls know the coverage percent
-after_script:
+after_success:
   - coveralls
