@@ -2,7 +2,7 @@ from flask import request, jsonify, make_response, Blueprint, abort
 from flask_restful import Resource, Api, reqparse
 
 parser = reqparse.RequestParser()
-parser.add_argument('message', type=str)
+parser.add_argument('message', type=str, action='append')
 
 redflag_list = [
     {    
