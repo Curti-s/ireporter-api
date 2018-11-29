@@ -31,14 +31,6 @@ class UserModel():
             if self.db is not None:
                 self.db.close()
     
-    def get_a_user(self):
-        # cursor
-        cur = self.db.cursor()
-        # execute
-        cur.execute("""SELECT * FROM users""")
-        # fetch one
-        data = cur.fetch_one()
-        return data
 
     def get_all_users(self):
         # cursor
