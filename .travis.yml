@@ -6,11 +6,11 @@ install:
   - pip install -r requirements.txt
   - pip install python-coveralls
   - pip install coverage
-  - pip install pytest
+  - pip install pytest pytest-cov
 
 # run tests
 script: 
-  - pytest 
+  - pytest --cov
 
 # return coverage and let coveralls know the coverage percent
 after_success:
