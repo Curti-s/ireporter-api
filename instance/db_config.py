@@ -1,7 +1,7 @@
 # instance/db_config.py
 
 import psycopg2
-from config import dbconfig
+from instance.config import dbconfig
 
 def connection():
     """ Read connection params and connect to db"""
@@ -12,22 +12,19 @@ def connection():
         return conn
     except (Exception,psycopg2.DatabaseError) as error:
         print(error)
-    finally:
-        if conn is not None:
-            conn.close()
 
 def tables():
     comands = (
         """
         CREATE TABLE IF NOT EXISTS user (
-                user_id SERIAL PRIMARY KEY NOT NULL,
-                firstname VARCHAR(60) NOT NULL,
-                lastname VARCHAR(60) NOT NULL,
-                username VARCHAR(60) NOT NULL,
-                email VARCHAR(60) NOT NULL,
-                phone_number VARCHAR(60),
-                registered TIMESTAMP DEFAULT now() NOT NULL,
-                isAdmin BOOL NOT NULL 
+            user_id SERIAL PRIMARY KEY NOT NULL,
+            firstname VARCHAR(60) NOT NULL,
+            lastname VARCHAR(60) NOT NULL,
+            username VARCHAR(60) NOT NULL,
+            email VARCHAR(60) NOT NULL,
+            phone_number VARCHAR(60),
+            registered TIMESTAMP DEFAULT now() NOT NULL,
+            isAdmin BOOL NOT NULL 
         )
         """,
         """
@@ -35,7 +32,7 @@ def tables():
         """,
         """
             CREATE TYPE current_status AS ENUM('draft', 'under investigation','resolved', 'rejected')
-        """.
+        """,
         """
             CREATE TABLE IF NOT EXISTS incident (
                 incident_id SERIAL PRIMARY KEY NO NULL,

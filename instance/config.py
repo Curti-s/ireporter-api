@@ -33,7 +33,7 @@ app_config = {
 }
 
 # database config
-def dbconfig(filename='database.ini',section='postgresql'):
+def dbconfig(filename='instance/database.ini',section='postgresql'):
     # create a parser
     parser = ConfigParser()
     # read config file 
@@ -42,7 +42,7 @@ def dbconfig(filename='database.ini',section='postgresql'):
     # get section, default to PostgreSQL
     db = {}
     if parser.has_section(section):
-        params = parser.items(section):
+        params = parser.items(section)
         for param in params:
             db[param[0]] = param[1]
     else:

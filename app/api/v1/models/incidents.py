@@ -19,7 +19,7 @@ class IncidentModel():
         """,
         """
             CREATE TYPE current_status AS ENUM('draft', 'under investigation','resolved', 'rejected')
-        """.
+        """,
         """
             CREATE TABLE IF NOT EXISTS incident (
                 incident_id SERIAL PRIMARY KEY NO NULL,

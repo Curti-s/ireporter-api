@@ -11,8 +11,8 @@ class UserModel():
         try:
             # cusor
             cur = self.db.cursor()
-            query = "
-                    CREATE TABLE IF NOT EXISTS user (
+            query = """
+                    CREATE TABLE IF NOT EXISTS users (
                     user_id SERIAL PRIMARY KEY NOT NULL,
                     firstname VARCHAR(60) NOT NULL,
                     lastname VARCHAR(60) NOT NULL,
@@ -20,11 +20,11 @@ class UserModel():
                     email VARCHAR(60) NOT NULL,
                     phone_number VARCHAR(60),
                     registered TIMESTAMP DEFAULT now() NOT NULL,
-                    isAdmin BOOL NOT NULL 
-            )"
+                    is_admin BOOL NOT NULL 
+            )"""
             # execute
             cur.execute(query)
-            cur.commit()
+            self.db.commit()
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:
@@ -42,19 +42,18 @@ class UserModel():
             users.append(items)
         return users
 
-    def save(self,firstname,lastname,username,email,phonenumber,register_date,isAdmin=False):
-        self.isAdmin = False
+    def save(self,firstname,lastname,username,email,phone_number,is_admin=False):
         payload = {
             'firstname':firstname,
             'lastname': lastname,
             'username': username,
             'email': email,
             'phone_number': phone_number,
-            'register_date': register_date,
+            'is_admin': is_admin
         } 
 
-        query = """INSERT INTO user (firstname, lastname, username,email, phone_number, register_date) VALUES
-                (%(firstname)s, %(lastname)s, %(username)s, %(email)s, %(phone_number)s, %(register_date)s)"""
+        query = """INSERT INTO users (firstname, lastname, username,email, phone_number) VALUES
+                (%(firstname)s, %(lastname)s, %(username)s, %(email)s, %(phone_number)s)"""
 
         cur = self.db.cursor()
         cur.execute(query, payload)
