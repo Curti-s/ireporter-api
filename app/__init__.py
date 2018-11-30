@@ -6,7 +6,7 @@ from instance.config import app_config
 from .api.v1.views import redflag as rf
 from .api.v1.views import incident_api
 from .api.v1.views.redflag_view import RedFlags, RedFlag
-from .api.v1.views.incident_view import IncidentApi, IncidentApiList
+from .api.v1.views.incident_view import IncidentApi
 
 def create_app(config_name):
     app = Flask(__name__, instance_relative_config=True)
@@ -18,7 +18,6 @@ def create_app(config_name):
     api.add_resource(RedFlags,'/redflag/')
     api.add_resource(RedFlag, '/redflag/<int:id>/')
     api.add_resource(IncidentApi,'/incidentapi/')
-    api.add_resource(IncidentApiList, '/incidentapi/<int:id>/')
     return app
 
 

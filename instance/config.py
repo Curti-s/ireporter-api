@@ -33,7 +33,7 @@ app_config = {
 }
 
 # database config
-def dbconfig(filename='instance/database.ini',section='postgresql'):
+def dbconfig(filename='database.ini',section='postgresql'):
     # create a parser
     parser = ConfigParser()
     # read config file 
@@ -45,7 +45,9 @@ def dbconfig(filename='instance/database.ini',section='postgresql'):
         params = parser.items(section)
         for param in params:
             db[param[0]] = param[1]
-    else:
-        raise Exception('Section {0} not found in {1} file'.format(section,filename))
-
+    # else:
+    #     raise Exception('Section {0} not found in {1} file'.format(section,filename))
+    print(db)
     return db
+if __name__ == '__main__':
+    dbconfig()
