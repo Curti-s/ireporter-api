@@ -48,7 +48,7 @@ class IncidentModel():
             if self.db is not None:
                 self.db.close()
 
-    def get_all_incident(self):
+    def get_all_incidents(self):
         # cursor
         cur = self.db.close()
         # execute

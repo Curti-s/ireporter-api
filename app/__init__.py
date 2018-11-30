@@ -4,11 +4,21 @@ from flask_restful import Resource, Api
 # local import
 from instance.config import app_config
 from .api.v1.views import redflag as rf
+from .api.v1.views import incident_api
+from .api.v1.views.redflag_view import RedFlags, RedFlag
+from .api.v1.views.incident_view import IncidentApi, IncidentApiList
 
 def create_app(config_name):
     app = Flask(__name__, instance_relative_config=True)
-    api = Api(app)
     app.config.from_object(app_config[config_name])
     app.config.from_pyfile('config.py')
     app.register_blueprint(rf)
+    app.register_blueprint(incident_api)
+    api = Api(app)
+    api.add_resource(RedFlags,'/redflag/')
+    api.add_resource(RedFlag, '/redflag/<int:id>/')
+    api.add_resource(IncidentApi,'/incidentapi/')
+    api.add_resource(IncidentApiList, '/incidentapi/<int:id>/')
     return app
+
+
