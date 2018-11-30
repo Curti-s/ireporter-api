@@ -17,7 +17,7 @@ def create_app(config_name):
     api = Api(app)
     api.add_resource(RedFlags,'/redflag/')
     api.add_resource(RedFlag, '/redflag/<int:id>/')
-    api.add_resource(IncidentApi,'/incidentapi/')
+    api.add_resource(IncidentApi,'/incident-api/')
     return app
 
 
