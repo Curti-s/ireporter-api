@@ -31,7 +31,7 @@ class IncidentApi(Resource):
         data = request.get_json()
         try:
             res = json.loads(data.data.decode())
-            redflag_type = res["type"]
+            redflag = res["type"]
             location = res["location"]
             status = res["status"]
             comment = res["comment"]

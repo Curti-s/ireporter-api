@@ -23,7 +23,7 @@ class IncidentModel():
 
     def save_incident(self,type,location,status,image,video,comment):
         payload = {
-            'type': redflag_type,
+            'type': redflag,
             'location':location,
             'status':status,
             'image': image,
