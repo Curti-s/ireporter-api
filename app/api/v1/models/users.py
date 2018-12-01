@@ -1,3 +1,4 @@
+import psycopg2
 from instance.db_config import connection
 
 
