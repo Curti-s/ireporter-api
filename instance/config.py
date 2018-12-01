@@ -25,6 +25,7 @@ class ProductionConfig(Config):
     """Production configuration"""
     DEBUG = False
     TESTING = False
+    DATABASE_URL = postgres_local_base + database_name
 
 app_config = {
     'development':DevelopmentConfig,
