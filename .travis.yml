@@ -1,3 +1,6 @@
+env:
+    global:
+      - CC-TEST_REPORTER_ID=1d0c4eb245e0d2b4244da2c293e0459bb93b39b94d78a60db5844b896697faec
 language: python
 python: 
   - "3.6"
@@ -7,11 +10,24 @@ install:
   - pip install python-coveralls
   - pip install coverage
   - pip install pytest pytest-cov
-
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 # run tests
 script: 
   - py.test --cov tests/
 
+# addons
+addons:
+  codeclimate:
+    repo_token:
+      secure: "hHN7JWD9TavpqthsRehxkqdEsZq0+C4Aef3K/Hut4K02sxw1mefGKlNXMartlfe8mA/3G1P6A/+382f041vOQh8LgLf4q0Gi9UwO5Qnye7MnH9iq0dL8PAbhctWrFM9SWH2m1ghv6ojl+Zpu6L82YA5euLg1X5IFUnxXFz7cMdCR/H9Gh5KQoOy4sXMCId+XNb7mVh6NK0lT/vnnUs1coGoenLe5Pwpx7T9NXIrhTbV+J/N1uKI9M9MioVucI4ru0GvLPYl2tMiWVQgRHhwguGQ9PXigW4oWM3g8iZgA+li+U2EK5nPTaQynYlJJ9/mkEioHTORdqpxVZyDv0DveM6uct7jDTqUZyL3UwDKIRgR4UZqSrmvKCEI0RGYo1Twpih8j5orQkVwmNpZwlyRZn0tFa4cmKFg3BmF6woN/oG8g6nDgtwVFgqS5S3GlN9nkZgERFRBHMiusumsTRojv7AhJMtZcRtJdzGoejTwkEOWeq2NSme30z/BpBrcSJFZaAKxCoJg4qx02t5ca7fMu/Q1O469NZNFxD1cQiCpYMk/beaCccC8N6bA4N/bYEf1Pd6I1TW//0FQk72DbeAlmmB9KMe7RVvYq5MIlWLfVyQxIdkU/W1mF/5yBagLoD4olvisPREtaY3fPzV1Ga77TSsDEb7VdjbSPwWZT7fl+EPs="
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - vendor/bin/test-reporter
+  
 # return coverage and let coveralls know the coverage percent
 after_success:
   - coverage report
