@@ -1,1 +1,1 @@
-web: gunicorn ireporter-api.run:app
+web: gunicorn ireporter-api.run:app --log-file=-
