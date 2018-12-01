@@ -10,8 +10,9 @@ install:
 
 # run tests
 script: 
-  - pytest --cov
+  - py.test --cov tests/
 
 # return coverage and let coveralls know the coverage percent
 after_success:
-  - coveralls --data_file=.coverage
+  - coverage report
+  - coveralls
