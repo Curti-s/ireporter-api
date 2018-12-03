@@ -1,7 +1,7 @@
 from flask import request, json, jsonify, Blueprint, make_response
 from flask_restful import Resource, Api, reqparse
 
-from app.api.v1.models.incidents import IncidentModel
+from app.v1.models.incidents import IncidentModel
 
 incident_api = Blueprint('incident_api',__name__)
 
