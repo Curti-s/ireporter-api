@@ -60,13 +60,13 @@ class RedFlag(Resource):
             abort(404)
         return make_response(jsonify(response),200)
 
-    # # edit a red flag comment / locaion
-    # def put(self,id):
-    #     json_data = request.get_json()
-    #     args = parser.parse_args()
-    #     response = self.db[id]
-    #     response['data'][0]['message'] = args.message
-    #     return make_response(jsonify(response),201)        
+    # edit a red flag comment / locaion
+    def put(self,id):
+        json_data = request.get_json()
+        args = parser.parse_args()
+        if self.db[id]:
+            response['data'][0]['message'] = args.message
+        return make_response(jsonify(response),201)        
 
 
     # delete a red flag

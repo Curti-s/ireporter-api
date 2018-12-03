@@ -1,12 +1,10 @@
 # instance/db_config.py
 
 import psycopg2
-from instance.config import dbconfig
 
 def connection():
     """ Read connection params and connect to db"""
     # read connection parameters
-    params = dbconfig()
     conn = psycopg2.connect(dbname="ireporter_api")
     return conn
     
