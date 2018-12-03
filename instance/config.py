@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import os
+from configparser import ConfigParser 
 
 postgres_local_base = 'postgresql:///'
 database_name = 'ireporter_api'
@@ -33,3 +34,14 @@ app_config = {
     'testing': TestingConfig,
     'production': ProductionConfig
 }
+
+def db_config():
+    with open('db.ini','r') as f:
+        parser = ConfigParser()
+        parser.read(f)
+        db = dict()
+        if parser.has_section('postgresql'):
+            params = parser.items('postgresql')
+            for param in params:
+                db[param[0]] = param[1]
+        return db
