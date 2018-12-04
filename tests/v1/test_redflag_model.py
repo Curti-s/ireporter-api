@@ -7,7 +7,7 @@ from app import create_app
 from app.v1.models.red_flag_model import RedFlagModel
 
 
-class TestRedFlag(unittest.TestCase):
+class TestRedFlagModel(unittest.TestCase):
     """Test red flag endpoint"""
 
     def setUp(self):
