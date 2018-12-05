@@ -5,18 +5,7 @@ red_flag_data = []
 class RedFlagModel(object):
     """Red-flag domain model"""
 
-    def __init__(self,id, created_on, created_by, record_type,
-                location, status, image, video, comment):
-        # red_flag attributes
-        self.id = id
-        self.created_on = created_on
-        self.created_by = created_by
-        self.record_type = record_type
-        self.location = location
-        self.status = status
-        self.image = image
-        self.video = video
-        self.comment = comment
+    def __init__(self):
         self.red_flag_data = red_flag_data
 
     def save(self, red_flag_dict):
@@ -39,11 +28,22 @@ class RedFlagModel(object):
     
     def get_red_flags(self):
         """Return all created red-flags"""
-        return self.red_flag_data
+        if len(self.red_flag_data) < 0:
+            return "No red flag objects created"
+        item = [item for item in self.red_flag_data]
+        return item
 
     def get_red_flag_by_id(self,id):
         """Get one red-flag by its uuid"""
-        for flag in self.red_flag_data:
-            if flag['id'] == id:
-                return flag
-        return "Invalid ID was provided"
+        if not self.red_flag_data:
+            return "No redflag record found"
+        for index in range(len(self.red_flag_data)):
+            if index == id:
+                return self.red_flag_data[index]
+
+
+    def  delete(self, id):
+        if self.get_red_flag_by_id(id):
+            return self.red_flag_data.pop(id)
+        return " Invalid red flag ID"
+
