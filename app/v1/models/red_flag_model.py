@@ -28,8 +28,6 @@ class RedFlagModel(object):
     
     def get_red_flags(self):
         """Return all created red-flags"""
-        if len(self.red_flag_data) < 0:
-            return "No red flag objects created"
         item = [item for item in self.red_flag_data]
         return item
 

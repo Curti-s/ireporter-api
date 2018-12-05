@@ -41,44 +41,71 @@ def redflags():
         }
         return make_response(jsonify(response_obj),201)
 
-    else:
-        # GET
-        all_flags = new_red_flag.get_all()
-        response_obj = {
-            'status': 200,
-            'data': all_flags
-        }
-        return make_response(jsonify(response_obj),200)
-
+    if request.method == 'GET':
+        try:
+            all_flags = new_red_flag.get_all()
+            response_obj = {
+                'status': 200,
+                'data': all_flags
+            }
+            return make_response(jsonify(response_obj),200)
+        except Exception as e:
+            response_obj = {
+                'status': 404,
+                'data': 'Record not found'
+            }
+            return make_response(jsonify(response_obj),404)
 
 @red_flag_api.route('/redflag/<int:id>', methods=['GET','PUT','DELETE'])
 def alter_redflag(id):
     if request.method == 'GET':
-        new_red_flag = RedFlagModel()
-        flag = new_red_flag.get_red_flag_by_id(id)
-        response_obj = {
-            'status': 200,
-            'data': flag
-        }
-        return make_response(jsonify(response_obj),200)
+        try:
+
+            new_red_flag = RedFlagModel()
+            flag = new_red_flag.get_red_flag_by_id(id)
+            response_obj = {
+                'status': 200,
+                'data': flag
+            }
+            return make_response(jsonify(response_obj),200)
+        except Exception as e:
+            response_obj = {
+                'status': 404,
+                'message': 'Record not found'
+            }
+            return make_response(jsonify(response_obj),404)
 
     if request.method == 'PUT':
-        new_red_flag = RedFlagModel()
-        # edit the location
-        request_data = request.get_json(force=True)
-        flag = new_red_flag.get_red_flag_by_id(id)
-        flag['location'] = request_data['location']
-        response_obj = {
-            'status': 202,
-            'message': "Updated red-flag record location"
-        }
-        return make_response(jsonify(response_obj),200)
+        try:
+            new_red_flag = RedFlagModel()
+            # edit the location
+            request_data = request.get_json(force=True)
+            flag = new_red_flag.get_red_flag_by_id(id)
+            flag['location'] = request_data['location']
+            response_obj = {
+                'status': 202,
+                'message': "Updated red-flag record location"
+            }
+            return make_response(jsonify(response_obj),200)
+        except Exception as e:
+            response_obj = {
+                'status': 404,
+                'message': 'Record not found'
+            }
+            return make_response(jsonify(response_obj),204)
 
     if request.method == 'DELETE':
-        new_red_flag = RedFlagModel()
-        new_red_flag.delete(id)
-        response_obj = {
-            'status': 204,
-            'message': 'Records object has been deleted'
-        }
-        return make_response(jsonify(response_obj),200)
+        try:
+            new_red_flag = RedFlagModel()
+            new_red_flag.delete(id)
+            response_obj = {
+                'status': 204,
+                'message': 'Records object has been deleted'
+            }
+            return make_response(jsonify(response_obj),200)
+        except Exception as e:
+            response_obj = {
+                'status': 404,
+                'message': 'Record not found'
+            }
+            return make_response(jsonify(response_obj),204)
