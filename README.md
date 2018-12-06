@@ -32,6 +32,14 @@ Run the flask application
 
 `flask run`
 
+Create a database locally
+ 
+Run  `python manage.py init_dev_db` to create tables in your dev database
+
+Run `python manage.py init_test_db` to create tables in your test database
+
+Run `python manage.py drop_tables` to drop all tables
+
 
 ## Running the endpoints
 
