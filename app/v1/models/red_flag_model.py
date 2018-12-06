@@ -33,8 +33,6 @@ class RedFlagModel(object):
 
     def get_red_flag_by_id(self,id):
         """Get one red-flag by its uuid"""
-        if not self.red_flag_data:
-            return "No redflag record found"
         for index in range(len(self.red_flag_data)):
             if index == id:
                 return self.red_flag_data[index]
