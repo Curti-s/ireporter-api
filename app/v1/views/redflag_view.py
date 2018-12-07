@@ -1,11 +1,20 @@
 import uuid, datetime, requests
 from flask import request,jsonify, make_response, Blueprint, abort, json
 from rapidjson import loads
-from flask_restful import Resource
+
+from flask_restful import Resource,reqparse
 from app.v1.models.red_flag_model import RedFlagModel
 
 red_flag_api = Blueprint('red_flag_api',__name__)
 
+parser = reqparse.RequestParser()
+parser.add_argument('created_by', type=int, help='Must be an int', required=True, location='json')
+parser.add_argument('record_type', type=str, required=True, location='json')
+parser.add_argument('location', type=str, required=True, help='Field cannot be blank', location='json')
+parser.add_argument('status', type=str, location='json')
+parser.add_argument('image',type=str, location='json')
+parser.add_argument('video',type=str, location='json')
+parser.add_argument('comment', type=str, required=True, location='json')
 
 @red_flag_api.route('/',methods=['GET'])
 @red_flag_api.route('/redflag/',methods=['GET'])
@@ -22,19 +31,10 @@ def get_all():
 @red_flag_api.route('/',methods=['POST','GET'])
 @red_flag_api.route('/redflag/',methods=['GET', 'POST'])
 def redflags():
-    if request.method == 'POST':
+    if request.method == 'POST' and request.headers['Content-Type'] == 'application/json':
         new_red_flag = RedFlagModel()
-        json_data = request.get_json(force=True)
-        payload = dict(
-            created_by = json_data['created_by'],
-            record_type = json_data['record_type'],
-            location = json_data['location'],
-            status = json_data['status'],
-            image = json_data['image'],
-            video = json_data['video'],
-            comment = json_data['comment'],
-        )
-        new_red_flag.save(payload)
+        json_data = request.json
+        new_red_flag.save(json_data)
         response_obj = {
                 'status': 201,
                 'message': "Created red-flag record"
