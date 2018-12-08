@@ -23,7 +23,7 @@ def get_all():
     all_flags = RedFlagModel().get_red_flags()
     response_obj = {
         'status': 200,
-        'data': [all_flags]
+        'data': all_flags
     }
     return make_response(jsonify(response_obj),200)
 
