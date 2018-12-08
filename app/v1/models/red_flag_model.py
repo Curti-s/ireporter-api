@@ -1,7 +1,10 @@
 import datetime
 import uuid
+from marshmallow import Schema, fields, ValidationError
 
 red_flag_data = []
+
+# Model
 class RedFlagModel(object):
     """Red-flag domain model"""
 
@@ -45,3 +48,26 @@ class RedFlagModel(object):
             return self.red_flag_data.pop(id)
         return " Invalid red flag ID"
 
+def null_validator(data):
+    if data is None:
+        raise ValidationError('Input is required')
+
+# Schema
+class RedFlagSchema(Schema):
+    """
+    Define RedFlagModel schema
+    """
+    id = fields.UUID(missing=uuid.uuid4)
+    created_on = fields.DateTime(default=datetime.datetime.now())
+    created_by = fields.String(validate=null_validator)
+    record_type = fields.String(required=True, 
+                                error_messages = {'required': {'message': 'Record type required',
+                                                    'record_type': 'red flag'}})
+    location = fields.String(required=True,
+                            error_messages={'required': {'message': 'Location type required'}})
+    status = fields.String(validate=null_validator)
+    image = fields.String(validate=null_validator)
+    video = fields.String(validate=null_validator)
+    comment = fields.String(validate=null_validator)
+    
+    
