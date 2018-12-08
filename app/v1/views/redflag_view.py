@@ -1,6 +1,5 @@
 import uuid, datetime, requests
 from flask import request,jsonify, make_response, Blueprint, abort, json
-from rapidjson import loads
 from marshmallow import ValidationError, pprint
 from app.v1.models.red_flag_model import RedFlagModel, RedFlagSchema
 

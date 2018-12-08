@@ -1,6 +1,6 @@
 import datetime
 import uuid
-from marshmallow import Schema, fields, ValidationError, validates
+from marshmallow import Schema, fields, ValidationError
 
 red_flag_data = []
 
